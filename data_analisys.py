@@ -54,15 +54,20 @@ classmate_dataframe = pd.DataFrame(classmate_grade_data)
 # summary of statistics using pandas.
 summary_classmate_grades = classmate_dataframe.describe() # we use the .describe() method to see statistics.
 
-print(f'The summary statistic of classmate grades is: {summary_classmate_grades}')
+#print(f'The summary statistic of classmate grades is: {summary_classmate_grades}')
 
 # mean of classmate's grades by gender, using the groupby() method.
 mean_grade_by_gender = classmate_dataframe[['classmate_gender', 'classmate_grade']].groupby('classmate_gender').describe()
-print(mean_grade_by_gender)
+#print(mean_grade_by_gender)
 
 filtering_male = classmate_dataframe[classmate_dataframe['classmate_gender'] == 'male']
 filtering_female = classmate_dataframe[classmate_dataframe['classmate_gender'] == 'female']
 
+print(classmate_dataframe)
+
+using_loc = classmate_dataframe.loc[5]
+
+print(using_loc)
 
 # plot a graph that contains the name and grade of each classmate.
 fig, ax = plt.subplots(2, 1, figsize=(6, 4))
@@ -78,11 +83,13 @@ ax[0].plot(filtering_male['classmate_name'], filtering_male['classmate_grade'], 
 ax[0].set_xlabel('Name')
 ax[0].set_ylabel('Grade')
 ax[0].set_title('Grades of male classmate')
+ax[0].grid()
 
 ax[1].plot(filtering_female['classmate_name'], filtering_female['classmate_grade'], marker='o', color='red')
 
 ax[1].set_xlabel('Name')
 ax[1].set_ylabel('Grade')
 ax[1].set_title('Grades of female classmate')
+ax[1].grid()
 
 plt.show()
