@@ -50,7 +50,6 @@ plt.subplots_adjust(
     hspace=0.324
 )
 
-ax[0, 0].bar(df['days_of_the_week'], df['total_expenses'], color='#DA70D6')
 ax[0, 0].plot(df['days_of_the_week'], df['total_expenses'], color='purple', marker='o')
 ax[0, 0].set_title('Total daily expenses')
 ax[0, 0].set_xlabel('Days')
