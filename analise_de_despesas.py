@@ -19,7 +19,7 @@ data = {
 # Creating a dataframe to identify each variable in data.
 df = pd.DataFrame(data)
 
-print(df)
+#print(df)
 
 # Statistical summary of daily total expenses.
 summary_total_expenses = df['total_expenses'].describe()
@@ -36,7 +36,7 @@ labels = ['Transport', 'Food', 'Others']
 
 sum_total_expenses = df['total_expenses'].sum()
 
-print(f'Sum of Total Expenses: {sum_total_expenses}')
+#print(f'Sum of Total Expenses: {sum_total_expenses}')
 
 # Show a bar chart of days x total expenses.
 fig, ax = plt.subplots(2, 2, figsize=(9, 6), num='Expense Analysis from: 01/04/24 to 12/04/24')
